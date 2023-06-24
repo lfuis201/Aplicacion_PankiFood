@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CrearCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTelefono" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroCuenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerClientes">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerClientesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTelefono" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroCuenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BorrarClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarClientePorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarClientePorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarClientePorIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CrearClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearCliente" />
+  </wsdl:message>
+  <wsdl:message name="CrearClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerClientes" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="BorrarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:BorrarCliente" />
+  </wsdl:message>
+  <wsdl:message name="BorrarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:BorrarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarClientePorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarClientePorId" />
+  </wsdl:message>
+  <wsdl:message name="ListarClientePorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarClientePorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearClienteHttpGetIn">
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="idTelefono" type="s:string" />
+    <wsdl:part name="numeroCuenta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearClienteHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerClientesHttpGetIn" />
+  <wsdl:message name="ObtenerClientesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClienteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="idTelefono" type="s:string" />
+    <wsdl:part name="numeroCuenta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClienteHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarClienteHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarClienteHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarClientePorIdHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarClientePorIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearClienteHttpPostIn">
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="idTelefono" type="s:string" />
+    <wsdl:part name="numeroCuenta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearClienteHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerClientesHttpPostIn" />
+  <wsdl:message name="ObtenerClientesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClienteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="nombre" type="s:string" />
+    <wsdl:part name="idTelefono" type="s:string" />
+    <wsdl:part name="numeroCuenta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClienteHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarClienteHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarClienteHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarClientePorIdHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarClientePorIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ClientesServicesSoap">
+    <wsdl:operation name="CrearCliente">
+      <wsdl:input message="tns:CrearClienteSoapIn" />
+      <wsdl:output message="tns:CrearClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <wsdl:input message="tns:ObtenerClientesSoapIn" />
+      <wsdl:output message="tns:ObtenerClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <wsdl:input message="tns:ActualizarClienteSoapIn" />
+      <wsdl:output message="tns:ActualizarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCliente">
+      <wsdl:input message="tns:BorrarClienteSoapIn" />
+      <wsdl:output message="tns:BorrarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientePorId">
+      <wsdl:input message="tns:ListarClientePorIdSoapIn" />
+      <wsdl:output message="tns:ListarClientePorIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClientesServicesHttpGet">
+    <wsdl:operation name="CrearCliente">
+      <wsdl:input message="tns:CrearClienteHttpGetIn" />
+      <wsdl:output message="tns:CrearClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <wsdl:input message="tns:ObtenerClientesHttpGetIn" />
+      <wsdl:output message="tns:ObtenerClientesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <wsdl:input message="tns:ActualizarClienteHttpGetIn" />
+      <wsdl:output message="tns:ActualizarClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCliente">
+      <wsdl:input message="tns:BorrarClienteHttpGetIn" />
+      <wsdl:output message="tns:BorrarClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientePorId">
+      <wsdl:input message="tns:ListarClientePorIdHttpGetIn" />
+      <wsdl:output message="tns:ListarClientePorIdHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClientesServicesHttpPost">
+    <wsdl:operation name="CrearCliente">
+      <wsdl:input message="tns:CrearClienteHttpPostIn" />
+      <wsdl:output message="tns:CrearClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <wsdl:input message="tns:ObtenerClientesHttpPostIn" />
+      <wsdl:output message="tns:ObtenerClientesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <wsdl:input message="tns:ActualizarClienteHttpPostIn" />
+      <wsdl:output message="tns:ActualizarClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCliente">
+      <wsdl:input message="tns:BorrarClienteHttpPostIn" />
+      <wsdl:output message="tns:BorrarClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientePorId">
+      <wsdl:input message="tns:ListarClientePorIdHttpPostIn" />
+      <wsdl:output message="tns:ListarClientePorIdHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientesServicesSoap" type="tns:ClientesServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearCliente">
+      <soap:operation soapAction="http://tempuri.org/CrearCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <soap:operation soapAction="http://tempuri.org/ObtenerClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/ActualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCliente">
+      <soap:operation soapAction="http://tempuri.org/BorrarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientePorId">
+      <soap:operation soapAction="http://tempuri.org/ListarClientePorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientesServicesSoap12" type="tns:ClientesServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearCliente">
+      <soap12:operation soapAction="http://tempuri.org/CrearCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerClientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCliente">
+      <soap12:operation soapAction="http://tempuri.org/BorrarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientePorId">
+      <soap12:operation soapAction="http://tempuri.org/ListarClientePorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientesServicesHttpGet" type="tns:ClientesServicesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CrearCliente">
+      <http:operation location="/CrearCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <http:operation location="/ObtenerClientes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <http:operation location="/ActualizarCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCliente">
+      <http:operation location="/BorrarCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientePorId">
+      <http:operation location="/ListarClientePorId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientesServicesHttpPost" type="tns:ClientesServicesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CrearCliente">
+      <http:operation location="/CrearCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerClientes">
+      <http:operation location="/ObtenerClientes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <http:operation location="/ActualizarCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCliente">
+      <http:operation location="/BorrarCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarClientePorId">
+      <http:operation location="/ListarClientePorId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientesServices">
+    <wsdl:port name="ClientesServicesSoap" binding="tns:ClientesServicesSoap">
+      <soap:address location="http://localhost:8081/ClientesServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientesServicesSoap12" binding="tns:ClientesServicesSoap12">
+      <soap12:address location="http://localhost:8081/ClientesServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientesServicesHttpGet" binding="tns:ClientesServicesHttpGet">
+      <http:address location="http://localhost:8081/ClientesServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientesServicesHttpPost" binding="tns:ClientesServicesHttpPost">
+      <http:address location="http://localhost:8081/ClientesServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

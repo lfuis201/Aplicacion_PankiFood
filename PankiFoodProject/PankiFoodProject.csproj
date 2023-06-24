@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36BF4CCC-EA44-4B50-AB6F-46558A19A035}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PankiFoodProject</RootNamespace>
+    <AssemblyName>PankiFoodProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Default.aspx" />
+    <Content Include="CrudAlimentos.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="CrudVentas.aspx" />
+    <Content Include="Venta.aspx" />
+    <Content Include="Login.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrudAlimentos.aspx.cs">
+      <DependentUpon>CrudAlimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrudAlimentos.aspx.designer.cs">
+      <DependentUpon>CrudAlimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrudVentas.aspx.cs">
+      <DependentUpon>CrudVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrudVentas.aspx.designer.cs">
+      <DependentUpon>CrudVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Venta.aspx.cs">
+      <DependentUpon>Venta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Venta.aspx.designer.cs">
+      <DependentUpon>Venta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AlimentoService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\VentasServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClientesServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LoginServices\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhost\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:8081/AlimentoService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AlimentoService</RelPath>
+      <UpdateFromURL>http://localhost:8081/AlimentoService.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8081/VentasServices.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\VentasServices</RelPath>
+      <UpdateFromURL>http://localhost:8081/VentasServices.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8081/ClientesServices.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClientesServices</RelPath>
+      <UpdateFromURL>http://localhost:8081/ClientesServices.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8081/LoginServices.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LoginServices</RelPath>
+      <UpdateFromURL>http://localhost:8081/LoginServices.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8081/DetalleVentasServices.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhost</RelPath>
+      <UpdateFromURL>http://localhost:8081/DetalleVentasServices.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\AlimentoService\AlimentoService.disco" />
+    <None Include="Web References\AlimentoService\AlimentoService.wsdl" />
+    <None Include="Web References\AlimentoService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\VentasServices\VentasServices.wsdl" />
+    <None Include="Web References\VentasServices\VentasServices.disco" />
+    <None Include="Web References\VentasServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ClientesServices\ClientesServices.disco" />
+    <None Include="Web References\ClientesServices\ClientesServices.wsdl" />
+    <None Include="Web References\ClientesServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\LoginServices\LoginServices.wsdl" />
+    <None Include="Web References\LoginServices\LoginServices.disco" />
+    <None Include="Web References\LoginServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhost\DetalleVentasServices.wsdl" />
+    <None Include="Web References\localhost\DetalleVentasServices.disco" />
+    <None Include="Web References\localhost\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8084" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

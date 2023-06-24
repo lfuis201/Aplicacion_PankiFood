@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{36BF4CCC-EA44-4B50-AB6F-46558A19A035}|">
+  <MonoDevelop.Ide.ItemProperties.PankiFoodProject PreferredExecutionTarget="mousepad" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PankiFoodProject/Venta.aspx.cs">
+    <Files>
+      <File FileName="PankiFoodProject/CrudVentas.aspx" Line="30" Column="25" />
+      <File FileName="PankiFoodProject/Venta.aspx" Line="146" Column="14" />
+      <File FileName="PankiFoodProject/Venta.aspx.cs" Line="177" Column="1" />
+      <File FileName="PankiFoodProject/CrudAlimentos.aspx.cs" Line="18" Column="45" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PankiFoodProject" expanded="True">
+            <Node name="PankiFoodProject" expanded="True">
+              <Node name="WebReferences" expanded="True">
+                <Node name="WebReferenceItem" expanded="True" />
+              </Node>
+              <Node name="CrudAlimentos.aspx" expanded="True" />
+              <Node name="CrudVentas.aspx" expanded="True" />
+              <Node name="Venta.aspx" expanded="True">
+                <Node name="Venta.aspx.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

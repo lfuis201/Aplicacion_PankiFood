@@ -1,0 +1,9 @@
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/bin/PankiFoodProject.dll
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/bin/PankiFoodProject.pdb
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/obj/Debug/PankiFoodProject.csproj.AssemblyReference.cache
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/obj/Debug/PankiFoodProject.csproj.CoreCompileInputs.cache
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/obj/Debug/PankiFoodProject.dll
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/obj/Debug/PankiFoodProject.pdb
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/bin/Newtonsoft.Json.dll
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/bin/Newtonsoft.Json.xml
+/home/luisfelipe/Projects/PankiFoodProject/PankiFoodProject/obj/Debug/PankiFoodProject.csproj.CopyComplete

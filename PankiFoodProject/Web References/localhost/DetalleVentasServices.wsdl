@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CrearDetalleVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idVenta" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idAlimento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="precioUnitario" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearDetalleVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearDetalleVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDetalleVentas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerDetalleVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDetalleVentasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDetalleVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idVenta" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idAlimento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="precioUnitario" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDetalleVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarDetalleVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrarDetalleVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrarDetalleVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BorrarDetalleVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CrearDetalleVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearDetalleVenta" />
+  </wsdl:message>
+  <wsdl:message name="CrearDetalleVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearDetalleVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDetalleVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalleVentas" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDetalleVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDetalleVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDetalleVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarDetalleVenta" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDetalleVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarDetalleVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BorrarDetalleVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:BorrarDetalleVenta" />
+  </wsdl:message>
+  <wsdl:message name="BorrarDetalleVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:BorrarDetalleVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearDetalleVentaHttpGetIn">
+    <wsdl:part name="idVenta" type="s:string" />
+    <wsdl:part name="idAlimento" type="s:string" />
+    <wsdl:part name="cantidad" type="s:string" />
+    <wsdl:part name="precioUnitario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearDetalleVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDetalleVentasHttpGetIn" />
+  <wsdl:message name="ObtenerDetalleVentasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDetalleVentaHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="idVenta" type="s:string" />
+    <wsdl:part name="idAlimento" type="s:string" />
+    <wsdl:part name="cantidad" type="s:string" />
+    <wsdl:part name="precioUnitario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDetalleVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarDetalleVentaHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarDetalleVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearDetalleVentaHttpPostIn">
+    <wsdl:part name="idVenta" type="s:string" />
+    <wsdl:part name="idAlimento" type="s:string" />
+    <wsdl:part name="cantidad" type="s:string" />
+    <wsdl:part name="precioUnitario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearDetalleVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDetalleVentasHttpPostIn" />
+  <wsdl:message name="ObtenerDetalleVentasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDetalleVentaHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="idVenta" type="s:string" />
+    <wsdl:part name="idAlimento" type="s:string" />
+    <wsdl:part name="cantidad" type="s:string" />
+    <wsdl:part name="precioUnitario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDetalleVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarDetalleVentaHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarDetalleVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="DetalleVentasServicesSoap">
+    <wsdl:operation name="CrearDetalleVenta">
+      <wsdl:input message="tns:CrearDetalleVentaSoapIn" />
+      <wsdl:output message="tns:CrearDetalleVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleVentas">
+      <wsdl:input message="tns:ObtenerDetalleVentasSoapIn" />
+      <wsdl:output message="tns:ObtenerDetalleVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDetalleVenta">
+      <wsdl:input message="tns:ActualizarDetalleVentaSoapIn" />
+      <wsdl:output message="tns:ActualizarDetalleVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarDetalleVenta">
+      <wsdl:input message="tns:BorrarDetalleVentaSoapIn" />
+      <wsdl:output message="tns:BorrarDetalleVentaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DetalleVentasServicesHttpGet">
+    <wsdl:operation name="CrearDetalleVenta">
+      <wsdl:input message="tns:CrearDetalleVentaHttpGetIn" />
+      <wsdl:output message="tns:CrearDetalleVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleVentas">
+      <wsdl:input message="tns:ObtenerDetalleVentasHttpGetIn" />
+      <wsdl:output message="tns:ObtenerDetalleVentasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDetalleVenta">
+      <wsdl:input message="tns:ActualizarDetalleVentaHttpGetIn" />
+      <wsdl:output message="tns:ActualizarDetalleVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarDetalleVenta">
+      <wsdl:input message="tns:BorrarDetalleVentaHttpGetIn" />
+      <wsdl:output message="tns:BorrarDetalleVentaHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DetalleVentasServicesHttpPost">
+    <wsdl:operation name="CrearDetalleVenta">
+      <wsdl:input message="tns:CrearDetalleVentaHttpPostIn" />
+      <wsdl:output message="tns:CrearDetalleVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleVentas">
+      <wsdl:input message="tns:ObtenerDetalleVentasHttpPostIn" />
+      <wsdl:output message="tns:ObtenerDetalleVentasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDetalleVenta">
+      <wsdl:input message="tns:ActualizarDetalleVentaHttpPostIn" />
+      <wsdl:output message="tns:ActualizarDetalleVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarDetalleVenta">
+      <wsdl:input message="tns:BorrarDetalleVentaHttpPostIn" />
+      <wsdl:output message="tns:BorrarDetalleVentaHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DetalleVentasServicesSoap" type="tns:DetalleVentasServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearDetalleVenta">
+      <soap:operation soapAction="http://tempuri.org/CrearDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleVentas">
+      <soap:operation soapAction="http://tempuri.org/ObtenerDetalleVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDetalleVenta">
+      <soap:operation soapAction="http://tempuri.org/ActualizarDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarDetalleVenta">
+      <soap:operation soapAction="http://tempuri.org/BorrarDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DetalleVentasServicesSoap12" type="tns:DetalleVentasServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearDetalleVenta">
+      <soap12:operation soapAction="http://tempuri.org/CrearDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleVentas">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerDetalleVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDetalleVenta">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarDetalleVenta">
+      <soap12:operation soapAction="http://tempuri.org/BorrarDetalleVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DetalleVentasServicesHttpGet" type="tns:DetalleVentasServicesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CrearDetalleVenta">
+      <http:operation location="/CrearDetalleVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleVentas">
+      <http:operation location="/ObtenerDetalleVentas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDetalleVenta">
+      <http:operation location="/ActualizarDetalleVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarDetalleVenta">
+      <http:operation location="/BorrarDetalleVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DetalleVentasServicesHttpPost" type="tns:DetalleVentasServicesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CrearDetalleVenta">
+      <http:operation location="/CrearDetalleVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDetalleVentas">
+      <http:operation location="/ObtenerDetalleVentas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDetalleVenta">
+      <http:operation location="/ActualizarDetalleVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarDetalleVenta">
+      <http:operation location="/BorrarDetalleVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DetalleVentasServices">
+    <wsdl:port name="DetalleVentasServicesSoap" binding="tns:DetalleVentasServicesSoap">
+      <soap:address location="http://localhost:8081/DetalleVentasServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DetalleVentasServicesSoap12" binding="tns:DetalleVentasServicesSoap12">
+      <soap12:address location="http://localhost:8081/DetalleVentasServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DetalleVentasServicesHttpGet" binding="tns:DetalleVentasServicesHttpGet">
+      <http:address location="http://localhost:8081/DetalleVentasServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DetalleVentasServicesHttpPost" binding="tns:DetalleVentasServicesHttpPost">
+      <http:address location="http://localhost:8081/DetalleVentasServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

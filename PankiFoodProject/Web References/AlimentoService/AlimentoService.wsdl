@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Insertar_Alimento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insertar_AlimentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insertar_AlimentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Listado_Alimento">
+        <s:complexType />
+      </s:element>
+      <s:element name="Listado_AlimentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Listado_AlimentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eliminar_Alimento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eliminar_AlimentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eliminar_AlimentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Actualizar_Alimento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Actualizar_AlimentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Actualizar_AlimentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerAlimentoPorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerAlimentoPorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerAlimentoPorIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Insertar_AlimentoSoapIn">
+    <wsdl:part name="parameters" element="tns:Insertar_Alimento" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_AlimentoSoapOut">
+    <wsdl:part name="parameters" element="tns:Insertar_AlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Listado_AlimentoSoapIn">
+    <wsdl:part name="parameters" element="tns:Listado_Alimento" />
+  </wsdl:message>
+  <wsdl:message name="Listado_AlimentoSoapOut">
+    <wsdl:part name="parameters" element="tns:Listado_AlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Eliminar_AlimentoSoapIn">
+    <wsdl:part name="parameters" element="tns:Eliminar_Alimento" />
+  </wsdl:message>
+  <wsdl:message name="Eliminar_AlimentoSoapOut">
+    <wsdl:part name="parameters" element="tns:Eliminar_AlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Actualizar_AlimentoSoapIn">
+    <wsdl:part name="parameters" element="tns:Actualizar_Alimento" />
+  </wsdl:message>
+  <wsdl:message name="Actualizar_AlimentoSoapOut">
+    <wsdl:part name="parameters" element="tns:Actualizar_AlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAlimentoPorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerAlimentoPorId" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAlimentoPorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerAlimentoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_AlimentoHttpGetIn">
+    <wsdl:part name="Nombre" type="s:string" />
+    <wsdl:part name="Descripcion" type="s:string" />
+    <wsdl:part name="Precio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_AlimentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Listado_AlimentoHttpGetIn" />
+  <wsdl:message name="Listado_AlimentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Eliminar_AlimentoHttpGetIn">
+    <wsdl:part name="Id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Eliminar_AlimentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Actualizar_AlimentoHttpGetIn">
+    <wsdl:part name="Id" type="s:string" />
+    <wsdl:part name="Nombre" type="s:string" />
+    <wsdl:part name="Descripcion" type="s:string" />
+    <wsdl:part name="Precio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Actualizar_AlimentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAlimentoPorIdHttpGetIn">
+    <wsdl:part name="Id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAlimentoPorIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_AlimentoHttpPostIn">
+    <wsdl:part name="Nombre" type="s:string" />
+    <wsdl:part name="Descripcion" type="s:string" />
+    <wsdl:part name="Precio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_AlimentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Listado_AlimentoHttpPostIn" />
+  <wsdl:message name="Listado_AlimentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Eliminar_AlimentoHttpPostIn">
+    <wsdl:part name="Id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Eliminar_AlimentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Actualizar_AlimentoHttpPostIn">
+    <wsdl:part name="Id" type="s:string" />
+    <wsdl:part name="Nombre" type="s:string" />
+    <wsdl:part name="Descripcion" type="s:string" />
+    <wsdl:part name="Precio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Actualizar_AlimentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAlimentoPorIdHttpPostIn">
+    <wsdl:part name="Id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAlimentoPorIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="AlimentoServiceSoap">
+    <wsdl:operation name="Insertar_Alimento">
+      <wsdl:input message="tns:Insertar_AlimentoSoapIn" />
+      <wsdl:output message="tns:Insertar_AlimentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Listado_Alimento">
+      <wsdl:input message="tns:Listado_AlimentoSoapIn" />
+      <wsdl:output message="tns:Listado_AlimentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar_Alimento">
+      <wsdl:input message="tns:Eliminar_AlimentoSoapIn" />
+      <wsdl:output message="tns:Eliminar_AlimentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Alimento">
+      <wsdl:input message="tns:Actualizar_AlimentoSoapIn" />
+      <wsdl:output message="tns:Actualizar_AlimentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlimentoPorId">
+      <wsdl:input message="tns:ObtenerAlimentoPorIdSoapIn" />
+      <wsdl:output message="tns:ObtenerAlimentoPorIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AlimentoServiceHttpGet">
+    <wsdl:operation name="Insertar_Alimento">
+      <wsdl:input message="tns:Insertar_AlimentoHttpGetIn" />
+      <wsdl:output message="tns:Insertar_AlimentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Listado_Alimento">
+      <wsdl:input message="tns:Listado_AlimentoHttpGetIn" />
+      <wsdl:output message="tns:Listado_AlimentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar_Alimento">
+      <wsdl:input message="tns:Eliminar_AlimentoHttpGetIn" />
+      <wsdl:output message="tns:Eliminar_AlimentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Alimento">
+      <wsdl:input message="tns:Actualizar_AlimentoHttpGetIn" />
+      <wsdl:output message="tns:Actualizar_AlimentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlimentoPorId">
+      <wsdl:input message="tns:ObtenerAlimentoPorIdHttpGetIn" />
+      <wsdl:output message="tns:ObtenerAlimentoPorIdHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AlimentoServiceHttpPost">
+    <wsdl:operation name="Insertar_Alimento">
+      <wsdl:input message="tns:Insertar_AlimentoHttpPostIn" />
+      <wsdl:output message="tns:Insertar_AlimentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Listado_Alimento">
+      <wsdl:input message="tns:Listado_AlimentoHttpPostIn" />
+      <wsdl:output message="tns:Listado_AlimentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar_Alimento">
+      <wsdl:input message="tns:Eliminar_AlimentoHttpPostIn" />
+      <wsdl:output message="tns:Eliminar_AlimentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Alimento">
+      <wsdl:input message="tns:Actualizar_AlimentoHttpPostIn" />
+      <wsdl:output message="tns:Actualizar_AlimentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlimentoPorId">
+      <wsdl:input message="tns:ObtenerAlimentoPorIdHttpPostIn" />
+      <wsdl:output message="tns:ObtenerAlimentoPorIdHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AlimentoServiceSoap" type="tns:AlimentoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insertar_Alimento">
+      <soap:operation soapAction="http://tempuri.org/Insertar_Alimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listado_Alimento">
+      <soap:operation soapAction="http://tempuri.org/Listado_Alimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar_Alimento">
+      <soap:operation soapAction="http://tempuri.org/Eliminar_Alimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Alimento">
+      <soap:operation soapAction="http://tempuri.org/Actualizar_Alimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlimentoPorId">
+      <soap:operation soapAction="http://tempuri.org/ObtenerAlimentoPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AlimentoServiceSoap12" type="tns:AlimentoServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insertar_Alimento">
+      <soap12:operation soapAction="http://tempuri.org/Insertar_Alimento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listado_Alimento">
+      <soap12:operation soapAction="http://tempuri.org/Listado_Alimento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar_Alimento">
+      <soap12:operation soapAction="http://tempuri.org/Eliminar_Alimento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Alimento">
+      <soap12:operation soapAction="http://tempuri.org/Actualizar_Alimento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlimentoPorId">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerAlimentoPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AlimentoServiceHttpGet" type="tns:AlimentoServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Insertar_Alimento">
+      <http:operation location="/Insertar_Alimento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listado_Alimento">
+      <http:operation location="/Listado_Alimento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar_Alimento">
+      <http:operation location="/Eliminar_Alimento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Alimento">
+      <http:operation location="/Actualizar_Alimento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlimentoPorId">
+      <http:operation location="/ObtenerAlimentoPorId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AlimentoServiceHttpPost" type="tns:AlimentoServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Insertar_Alimento">
+      <http:operation location="/Insertar_Alimento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Listado_Alimento">
+      <http:operation location="/Listado_Alimento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eliminar_Alimento">
+      <http:operation location="/Eliminar_Alimento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar_Alimento">
+      <http:operation location="/Actualizar_Alimento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAlimentoPorId">
+      <http:operation location="/ObtenerAlimentoPorId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AlimentoService">
+    <wsdl:port name="AlimentoServiceSoap" binding="tns:AlimentoServiceSoap">
+      <soap:address location="http://localhost:8081/AlimentoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AlimentoServiceSoap12" binding="tns:AlimentoServiceSoap12">
+      <soap12:address location="http://localhost:8081/AlimentoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AlimentoServiceHttpGet" binding="tns:AlimentoServiceHttpGet">
+      <http:address location="http://localhost:8081/AlimentoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AlimentoServiceHttpPost" binding="tns:AlimentoServiceHttpPost">
+      <http:address location="http://localhost:8081/AlimentoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

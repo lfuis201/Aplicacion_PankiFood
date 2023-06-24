@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CrearVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fechaVenta" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCliente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerVentas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerVentasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaVenta" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCliente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrarVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorrarVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BorrarVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CrearVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearVenta" />
+  </wsdl:message>
+  <wsdl:message name="CrearVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerVentas" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarVenta" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BorrarVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:BorrarVenta" />
+  </wsdl:message>
+  <wsdl:message name="BorrarVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:BorrarVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearVentaHttpGetIn">
+    <wsdl:part name="fechaVenta" type="s:string" />
+    <wsdl:part name="monto" type="s:string" />
+    <wsdl:part name="idCliente" type="s:string" />
+    <wsdl:part name="idEmpleado" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVentasHttpGetIn" />
+  <wsdl:message name="ObtenerVentasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarVentaHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="fechaVenta" type="s:string" />
+    <wsdl:part name="monto" type="s:string" />
+    <wsdl:part name="idCliente" type="s:string" />
+    <wsdl:part name="idEmpleado" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarVentaHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearVentaHttpPostIn">
+    <wsdl:part name="fechaVenta" type="s:string" />
+    <wsdl:part name="monto" type="s:string" />
+    <wsdl:part name="idCliente" type="s:string" />
+    <wsdl:part name="idEmpleado" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerVentasHttpPostIn" />
+  <wsdl:message name="ObtenerVentasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarVentaHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="fechaVenta" type="s:string" />
+    <wsdl:part name="monto" type="s:string" />
+    <wsdl:part name="idCliente" type="s:string" />
+    <wsdl:part name="idEmpleado" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarVentaHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BorrarVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="VentasServicesSoap">
+    <wsdl:operation name="CrearVenta">
+      <wsdl:input message="tns:CrearVentaSoapIn" />
+      <wsdl:output message="tns:CrearVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVentas">
+      <wsdl:input message="tns:ObtenerVentasSoapIn" />
+      <wsdl:output message="tns:ObtenerVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVenta">
+      <wsdl:input message="tns:ActualizarVentaSoapIn" />
+      <wsdl:output message="tns:ActualizarVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarVenta">
+      <wsdl:input message="tns:BorrarVentaSoapIn" />
+      <wsdl:output message="tns:BorrarVentaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VentasServicesHttpGet">
+    <wsdl:operation name="CrearVenta">
+      <wsdl:input message="tns:CrearVentaHttpGetIn" />
+      <wsdl:output message="tns:CrearVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVentas">
+      <wsdl:input message="tns:ObtenerVentasHttpGetIn" />
+      <wsdl:output message="tns:ObtenerVentasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVenta">
+      <wsdl:input message="tns:ActualizarVentaHttpGetIn" />
+      <wsdl:output message="tns:ActualizarVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarVenta">
+      <wsdl:input message="tns:BorrarVentaHttpGetIn" />
+      <wsdl:output message="tns:BorrarVentaHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VentasServicesHttpPost">
+    <wsdl:operation name="CrearVenta">
+      <wsdl:input message="tns:CrearVentaHttpPostIn" />
+      <wsdl:output message="tns:CrearVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVentas">
+      <wsdl:input message="tns:ObtenerVentasHttpPostIn" />
+      <wsdl:output message="tns:ObtenerVentasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVenta">
+      <wsdl:input message="tns:ActualizarVentaHttpPostIn" />
+      <wsdl:output message="tns:ActualizarVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarVenta">
+      <wsdl:input message="tns:BorrarVentaHttpPostIn" />
+      <wsdl:output message="tns:BorrarVentaHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VentasServicesSoap" type="tns:VentasServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearVenta">
+      <soap:operation soapAction="http://tempuri.org/CrearVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVentas">
+      <soap:operation soapAction="http://tempuri.org/ObtenerVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVenta">
+      <soap:operation soapAction="http://tempuri.org/ActualizarVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarVenta">
+      <soap:operation soapAction="http://tempuri.org/BorrarVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VentasServicesSoap12" type="tns:VentasServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearVenta">
+      <soap12:operation soapAction="http://tempuri.org/CrearVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVentas">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVenta">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarVenta">
+      <soap12:operation soapAction="http://tempuri.org/BorrarVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VentasServicesHttpGet" type="tns:VentasServicesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CrearVenta">
+      <http:operation location="/CrearVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVentas">
+      <http:operation location="/ObtenerVentas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVenta">
+      <http:operation location="/ActualizarVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarVenta">
+      <http:operation location="/BorrarVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VentasServicesHttpPost" type="tns:VentasServicesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CrearVenta">
+      <http:operation location="/CrearVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerVentas">
+      <http:operation location="/ObtenerVentas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarVenta">
+      <http:operation location="/ActualizarVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarVenta">
+      <http:operation location="/BorrarVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VentasServices">
+    <wsdl:port name="VentasServicesSoap" binding="tns:VentasServicesSoap">
+      <soap:address location="http://localhost:8081/VentasServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VentasServicesSoap12" binding="tns:VentasServicesSoap12">
+      <soap12:address location="http://localhost:8081/VentasServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VentasServicesHttpGet" binding="tns:VentasServicesHttpGet">
+      <http:address location="http://localhost:8081/VentasServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VentasServicesHttpPost" binding="tns:VentasServicesHttpPost">
+      <http:address location="http://localhost:8081/VentasServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
